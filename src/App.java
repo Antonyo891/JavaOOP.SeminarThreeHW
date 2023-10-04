@@ -14,9 +14,9 @@ public class App {
         System.out.println(student3);
         System.out.println(student3.getStudentId());
         StudentsGroup studentsGroup1 = new StudentsGroup(111);
-        studentsGroup1.AddStudent(student1);
-        studentsGroup1.AddStudent(student2);
         studentsGroup1.AddStudent(student3);
+        studentsGroup1.AddStudent(student2);
+        studentsGroup1.AddStudent(student1);
         System.out.println(studentsGroup1);
         System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
         while (studentsGroup1.iterator().hasNext()){
@@ -25,11 +25,13 @@ public class App {
 /*         studentsGroup1.iterator().remove();
         studentsGroup1.iterator().remove(); */
         System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
-
+        //studentsGroup1.getListOfStudent().sort(null);
         StudentGroupServise servise = new StudentGroupServise(studentsGroup1);
+        //servise.Sort(studentsGroup1);
         Controller controller = new Controller(servise);
+        //controller.SortStudentGroup();
         //controller.RemoveTheStudent("Anton", "Anton");
-        controller.RemoveTheStudent("Grigory", "Grigory");
+        //controller.RemoveTheStudent("Grigory", "Grigory");
         //servise.RemoveTheStudent("Olga", "Olga");
         //servise.RemoveTheStudent("Anton", "Anton");
         //servise.RemoveTheStudent("Grigory", "Grigory");

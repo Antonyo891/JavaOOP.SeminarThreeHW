@@ -7,4 +7,8 @@ public class Controller {
     public void RemoveTheStudent (String firstName, String lastName){
         this.studentGroupServise.RemoveTheStudent(firstName, lastName);
     }
+
+    public void SortStudentGroup (){
+        this.studentGroupServise.Sort(null);
+    }
 }

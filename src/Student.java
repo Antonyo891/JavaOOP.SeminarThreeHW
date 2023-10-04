@@ -1,4 +1,4 @@
-public class Student {
+public class Student implements Comparable<Student> {
     private Integer studentId, numberOfGroup;
     private String firstName, lastName;
     protected static Integer id=0;
@@ -53,7 +53,6 @@ public class Student {
         this.lastName = lastName;
     }
     
-
     @Override
     public String toString() {
         return "{" +
@@ -61,6 +60,11 @@ public class Student {
             ", numberOfGroup='" + getNumberOfGroup() + "'" +
             ", id='" + getStudentId() + "'" +
             "}";
+    }
+
+    @Override
+    public int compareTo(Student o) {
+      return this.studentId.compareTo(o.getStudentId());
     }
 
 

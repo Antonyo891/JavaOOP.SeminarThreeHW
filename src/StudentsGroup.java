@@ -1,7 +1,8 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class StudentsGroup  {
+public class StudentsGroup implements Iterable<Student>  {
     private Integer groupId, numberOfGroup;
     private ArrayList <Student> listOfStudent;
     private static Integer id =0;
@@ -65,6 +66,11 @@ public class StudentsGroup  {
             ", numberOfGroup='" + getNumberOfGroup() + "'" +
             ", number of student ='" + this.listOfStudent.size() + "'" +
             "}";
+    }
+
+    @Override
+    public StudentsGroupIterator iterator() {
+        return new StudentsGroupIterator(this);
     }
 
 }

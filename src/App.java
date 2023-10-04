@@ -18,22 +18,22 @@ public class App {
         studentsGroup1.AddStudent(student2);
         studentsGroup1.AddStudent(student3);
         System.out.println(studentsGroup1);
-        //System.out.println(student1);
-        //System.out.println("-------------");
-        //System.out.println(student2);
-        //System.out.println("-------------");
-        //System.out.println(student3);
-        //System.out.println("-------------");
-        /*while (studentsGroup1.hasNext()){
-            System.out.println(studentsGroup1.next());
-        }*/
-        for (var items: studentsGroup1){
-            System.out.println(items);
+        System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
+        while (studentsGroup1.iterator().hasNext()){
+            System.out.println(studentsGroup1.iterator().next());
         }
-        StudentGroupServise servise = new StudentGroupServise();
-        temp = servise.RemoveTheStudent("Olga", studentsGroup1.getListOfStudent());
-        studentsGroup1.UpdateGroup(temp);
-        for (var items: studentsGroup1){
+/*         studentsGroup1.iterator().remove();
+        studentsGroup1.iterator().remove(); */
+        System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
+
+        StudentGroupServise servise = new StudentGroupServise(studentsGroup1);
+        Controller controller = new Controller(servise);
+        //controller.RemoveTheStudent("Anton", "Anton");
+        controller.RemoveTheStudent("Grigory", "Grigory");
+        //servise.RemoveTheStudent("Olga", "Olga");
+        //servise.RemoveTheStudent("Anton", "Anton");
+        //servise.RemoveTheStudent("Grigory", "Grigory");
+            for (Student items: studentsGroup1){
             System.out.println(items);
         }
     }

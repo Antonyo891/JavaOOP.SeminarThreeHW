@@ -3,17 +3,21 @@ import java.util.List;
 
 public class StudentGroupServise{
 
-    private List <Student> removeStudentList = new ArrayList<>();
-    
-    public List<Student> RemoveTheStudent (String name, List<Student> listOfStudents ){
-        for (var item: listOfStudents) {
-            if (item.getName().toLowerCase().equals(name.toLowerCase())) {
-                listOfStudents.remove(item);
-                removeStudentList.add(item);
-                System.out.println("Student " + name + 
-                " remove from group № " + item.getNumberOfGroup());
-            }  
+    private StudentsGroup studentsGroup;
+    private Integer count; 
+    public StudentGroupServise(StudentsGroup studentsGroup) {
+        this.studentsGroup = studentsGroup;
     }
-    return listOfStudents;
+
+    public void RemoveTheStudent (String firstName, String lastName ){
+        this.count = 0;
+        for (Student item: this.studentsGroup)
+            if ((item.getFirstName().toLowerCase().equals(firstName.toLowerCase()))&&
+                (item.getLastName().toLowerCase().equals(lastName.toLowerCase())))
+                    {   studentsGroup.iterator().previous();
+                        studentsGroup.iterator().remove();
+                        this.count++;}
+            if (count==0) System.out.println("Student " + 
+            firstName + " " + lastName + " not found");    
 }
 }

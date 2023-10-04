@@ -11,4 +11,8 @@ public class Controller {
     public void SortStudentGroup (){
         this.studentGroupServise.Sort(null);
     }
+
+     public void SortStudentGroupByName (){
+        this.studentGroupServise.SortByName();
+    }
 }

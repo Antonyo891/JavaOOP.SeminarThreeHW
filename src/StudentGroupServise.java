@@ -23,4 +23,9 @@ public class StudentGroupServise{
     public void Sort (StudentsGroup studentsGroup){
         this.studentsGroup.getListOfStudent().sort(null);
     }
+
+       public void SortByName (){
+        StudentComparator studentComparator = new StudentComparator();
+        this.studentsGroup.getListOfStudent().sort(studentComparator);
+    }
 }

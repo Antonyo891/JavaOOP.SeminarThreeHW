@@ -7,10 +7,10 @@ public class App {
         Student student1 = new Student("Anton");
         System.out.println(student1);
         System.out.println(student1.getStudentId());
-        Student student2 = new Student("Grigory");
+        Student student2 = new Student("ZAgaqjj");
         System.out.println(student2);
         System.out.println(student2.getStudentId());
-        Student student3 = new Student("Olga");
+        Student student3 = new Student("Tagal");
         System.out.println(student3);
         System.out.println(student3.getStudentId());
         StudentsGroup studentsGroup1 = new StudentsGroup(111);
@@ -28,8 +28,12 @@ public class App {
         //studentsGroup1.getListOfStudent().sort(null);
         StudentGroupServise servise = new StudentGroupServise(studentsGroup1);
         //servise.Sort(studentsGroup1);
+        //servise.SortByName();
         Controller controller = new Controller(servise);
-        //controller.SortStudentGroup();
+        controller.SortStudentGroup();
+        System.out.println(studentsGroup1.getListOfStudent());
+        controller.SortStudentGroupByName();
+        
         //controller.RemoveTheStudent("Anton", "Anton");
         //controller.RemoveTheStudent("Grigory", "Grigory");
         //servise.RemoveTheStudent("Olga", "Olga");

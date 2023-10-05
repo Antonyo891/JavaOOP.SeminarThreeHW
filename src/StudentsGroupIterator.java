@@ -31,7 +31,7 @@ public class StudentsGroupIterator implements Iterator<Student>
 
     public Student previous() {
         if (index==0) {
-            index = students.size()-1;
+            index = this.students.size()-1;
             return this.students.get(index);}
         return this.students.get(--index);            
     }

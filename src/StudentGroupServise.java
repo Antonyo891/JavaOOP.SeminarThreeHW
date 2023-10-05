@@ -20,7 +20,7 @@ public class StudentGroupServise{
             if (count==0) System.out.println("Student " + 
             firstName + " " + lastName + " not found");    
 }
-    public void Sort (StudentsGroup studentsGroup){
+    public void Sort (){
         this.studentsGroup.getListOfStudent().sort(null);
     }
 

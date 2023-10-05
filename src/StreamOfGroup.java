@@ -2,23 +2,23 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class StreamOfGroup implements Iterator<StudentsGroup> {
-    private ArrayList<StudentsGroup> flowOfGroup;
+    private ArrayList<StudentsGroup> streamOfGroup;
     private int index=0;
 
-    public StreamOfGroup(ArrayList<StudentsGroup> flowOfGroup) {
-        this.flowOfGroup = flowOfGroup;
+    public StreamOfGroup(ArrayList<StudentsGroup> streamOfGroup) {
+        this.streamOfGroup = streamOfGroup;
     }
 
-    public int getFlowOfGroupSize() {
-        return this.flowOfGroup.size();
+    public int getStreamOfGroupSize() {
+        return this.streamOfGroup.size();
     }
 
-    public ArrayList<StudentsGroup> getFlowOfGroup() {
-        return this.flowOfGroup;
+    public ArrayList<StudentsGroup> getStreamOfGroup() {
+        return this.streamOfGroup;
     }
 
-    public void setFlowOfGroup(ArrayList<StudentsGroup> flowOfGroup) {
-        this.flowOfGroup = flowOfGroup;
+    public void setStreamOfGroup(ArrayList<StudentsGroup> streamOfGroup) {
+        this.streamOfGroup = streamOfGroup;
     }
 
     public int getIndex() {
@@ -31,10 +31,10 @@ public class StreamOfGroup implements Iterator<StudentsGroup> {
 
     @Override
     public boolean hasNext() {
-        if (index>=this.flowOfGroup.size()){
+        if (index>=this.streamOfGroup.size()){
             index=0;
             return false;
-        } return index<flowOfGroup.size();
+        } return index<streamOfGroup.size();
     }
 
     @Override
@@ -42,14 +42,23 @@ public class StreamOfGroup implements Iterator<StudentsGroup> {
     if (!hasNext()) {
         index=0;
         return null;
-    }    return this.flowOfGroup.get(index++);
+    }    return this.streamOfGroup.get(index++);
     }
 
     public StudentsGroup previous() {
         if (index==0) {
-            index = this.flowOfGroup.size()-1;
-            return this.flowOfGroup.get(index);}
-        return this.flowOfGroup.get(--index);            
+            index = this.streamOfGroup.size()-1;
+            return this.streamOfGroup.get(index);}
+        return this.streamOfGroup.get(--index);            
+    }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " streamOfGroup='" + getStreamOfGroup() + "'" +
+            ", index='" + getIndex() + "'" +
+            "}";
     }
 
 }
